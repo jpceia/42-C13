@@ -6,20 +6,24 @@
 /*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 23:56:24 by jpceia            #+#    #+#             */
-/*   Updated: 2021/11/15 23:58:53 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/11/16 00:37:04 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_btree.h"
 
-int btree_level_count(t_btree *root)
+int	imax(int a, int b)
 {
-	int level_count;
+	if (a < b)
+		return (b);
+	return (a);
+}
 
+int	btree_level_count(t_btree *root)
+{
 	if (!root)
 		return (0);
-	level_count = 1;
-	level_count += btree_level_count(root->left);
-	level_count += btree_level_count(root->right);
-	return (level_count);
+	return (1 + imax(
+			btree_level_count(root->left),
+			btree_level_count(root->right)));
 }
