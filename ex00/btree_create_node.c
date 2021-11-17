@@ -6,13 +6,21 @@
 /*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 23:10:28 by jpceia            #+#    #+#             */
-/*   Updated: 2021/11/15 23:15:09 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/11/17 17:51:38 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_btree.h"
 #include <stdlib.h>
 
+/**
+ * @brief	Allocates a new element.
+ *			It should initialise its item to the argument’s value, and all
+ *			other elements to 0.
+ * 
+ * @param	item		The item to be inserted.
+ * @return	t_btree*	The new tree node.
+ */
 t_btree	*btree_create_node(void *item)
 {
 	t_btree	*node;

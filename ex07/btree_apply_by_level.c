@@ -6,7 +6,7 @@
 /*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 13:38:32 by jpceia            #+#    #+#             */
-/*   Updated: 2021/11/17 14:02:59 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/11/17 17:56:19 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,13 @@ void	btree_apply_to_level(
 	btree_apply_to_level(root->right, info, applyf);
 }
 
+/**
+ * @brief	Applies the function passed as argument to each node of the tree.
+ *			The tree is browsed level by level.
+ * 
+ * @param	root	the root of the tree.
+ * @param	applyf	the function to apply to each node.
+ */
 void	btree_apply_by_level(t_btree *root,
 	void (*applyf)(void *item, int current_level, int is_first_elem))
 {
